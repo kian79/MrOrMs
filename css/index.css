@@ -1,0 +1,212 @@
+    /* This will make page good for small screens such as mobiles. */
+    
+    @media screen and (max-width: 550px) {
+        .form {
+            flex-direction: column;
+            min-width: 90vw;
+        }
+        .right {
+            min-height: 300px;
+            width: 80%;
+        }
+    }
+    /* 
+This class is for website's body. It gives body fullscreen size and sets the background image.
+It leaves body without margin and padding and defines font and size of background.
+*/
+    
+    body {
+        width: 100vw;
+        height: 100vh;
+        margin: 0;
+        padding: 0;
+        background: url('../images/bg.jpg') no-repeat center fixed;
+        background-size: cover;
+        font-family: 'Times New Roman', Times, serif;
+    }
+    /* 
+This class is for main section. It centers all the things in it both horizentaly 
+and verticallu.
+*/
+    
+    .main {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    /* 
+This class is for our form. It gives specific padding. It defines a solid border with
+specific size and color. It also gives a radius form and sets background color and 
+box-shadow color. 
+This class uses flex as display to make columns with equal width with row direction.
+It also gives min height and width to have required space in each row and column.
+*/
+    
+    .form {
+        padding: 1rem;
+        border: 1px rgba(0, 0, 0, 0.24) solid;
+        border-radius: 3rem;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        background-color: rgba(255, 255, 255, 0.3);
+        ;
+        display: flex;
+        flex-direction: row;
+        min-height: 600px;
+        min-width: 700px;
+    }
+    /* 
+I devided page to 2 parts. A left part and a right part. These classes are for these 
+2 parts. This gives them equal width and uses padding to seperate them better, and 
+by using flex-direction: column it put elements on top of each other.
+*/
+    
+    .left {
+        width: 50%;
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .right {
+        width: 50%;
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+    }
+    /*
+This will add padding to seperate children of 2 columns.
+*/
+    
+    .left>*,
+    .right>* {
+        padding: .5rem;
+    }
+    /* This will give padding between elements of right section */
+    
+    .right .saved_gender--container div {
+        padding: .6rem 0;
+    }
+    /* sets height of elements in the save gender section of 
+    right side to 50% */
+    
+    .right .saved_gender--container>* {
+        height: 50%;
+    }
+    /* sets height of elements in theright side to 33% */
+    
+    .right>[class$=--container] {
+        height: 33%;
+    }
+    /*
+Give saved answer row dotter border  with grey color and 1px size
+*/
+    
+    .right .saved_gender--container {
+        border: 1px dotted grey;
+    }
+    /* It will put the label into the textbox and make it like placeholder */
+    
+    div[class$=input--container] {
+        position: relative;
+    }
+    /* 
+    This class makes textbox look more beautiful by removing borders
+    and outline and just keeping bottom border. It also makes the background
+    tranparent and sets line-height to 2rem
+*/
+    
+    input[type='text'] {
+        border: none;
+        outline: none;
+        border-bottom: 3px solid rgb(15, 29, 228);
+        background: transparent;
+        line-height: 2rem;
+    }
+    /*
+    It will change the color of bottom border of the text box when focused.
+*/
+    
+    input[type='text']:focus {
+        border-bottom: 3px solid rgb(211, 30, 166);
+    }
+    /*
+    It will make the label like placeholder
+*/
+    
+    div[class$=input--container] label {
+        color: grey;
+        position: absolute;
+        bottom: 30%;
+        left: .5rem;
+        transition: all ease .2s;
+    }
+    /*
+When input is focused or valid it will move the label top to see the 
+inputed text.
+*/
+    
+    input[type='text']:focus~label {
+        bottom: 80%;
+        color: rgb(39, 90, 149);
+    }
+    
+    input[type='text']:valid~label {
+        bottom: 80%;
+        color: rgb(39, 90, 149);
+    }
+    /* This class sets padding, border, color radius for all 
+    of the buttons and sets cursor as pointer so by hovering the 
+    cursor it will look like the pointer. */
+    
+    .button {
+        padding: .3rem .5rem;
+        border: 1px solid transparent;
+        border-radius: .8rem;
+        color: white;
+        cursor: pointer;
+    }
+    /* This class sets a bg color for the save button and adds a top margin
+    to it so that it wont get into radio inputs */
+    
+    .button.save {
+        margin-top: 10px;
+        background-color: #1a67db;
+    }
+    /* This class sets a bg color for the submit button */
+    
+    .button.submit {
+        background-color: #1d964f;
+    }
+    /* This class sets a bg color for the clear button */
+    
+    .button.clear {
+        background-color: #ca11ca;
+    }
+    
+    ‍
+    /*
+This class used when we want to give user a specific information for example
+when there is an error or when we saved a name, etc. 
+Thi function first defines a color then sets a height and width so that is will not 
+resize or move. It also makes texts center and adds transition to all to show and hide with effect.
+It's opacity is 0 by default because we want user to see this information in specific times
+not all the times.*/
+    
+    .info {
+        text-align: center;
+        height: 1rem;
+        padding: .5rem;
+        opacity: 0;
+        transition: all ease .5s;
+        width: 350px;
+    }
+    /* By calling this class the opacity will become 1 and the element
+will be visisble. It will use to show information section when
+it is necessary */
+    
+    .show {
+        opacity: 1;
+    }

@@ -1,0 +1,63 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mr or Ms?</title>
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="icon" href="./images/identicon.jpg">
+</head>
+
+<body>
+    <div class="main">
+        <form class="form">
+            <div class="left">
+                <h2>Mr or Ms?</h2>
+                <div class="name_input--container">
+                    <input type="text" name="firstname" id="firstname_input" maxlength="255" required>
+                    <label for="firstname_input">Enter firstname</label>
+                </div>
+                <div class="button--container">
+                    <!-- <br> -->
+                    <button type="submit" class="button submit">Submit</button>
+                </div>
+                <div class="gender_prediction_result--container">
+                    <div>
+                        <h2>Gender is:</h2>
+                        <div class="gender_prediction_result"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="right">
+                <div class="gender_saver--container">
+                    <div>
+                        <h3>Want to save gender?</h3>
+                        <div>
+                            <input type="radio" name="gender" id="male" value="male">
+                            <label for="male">male</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="gender" id="female" value="female">
+                            <label for="female">female</label>
+                        </div>
+                        <button class="button save">Save</button>
+                    </div>
+                </div>
+                <div class="saved_gender--container">
+                    <h2>Saved Gender</h2>
+                    <div class="saved_gender"></div>
+                    <div class="clear_button--container">
+                        <!-- <br> -->
+                        <button class="button clear">Clear</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <div class="info">
+        </div>
+    </div>
+    <script src="./js/index.js"></script>
+</body>
+
+</html>
